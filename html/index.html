@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrenheit to Celsius</title>
+</head>
+<style>
+    .container{
+        width: 50%;
+        border: 1px solid black;
+        margin: auto;
+        border-radius: 15px;
+        text-align: center;
+    }
+    .wrap1{
+        padding: 40px;
+    }
+    @media (max-width:786px) {
+        .wrap1{
+        padding: 35px;
+        }
+        .wrap1 input{
+            width: 75%;
+        }
+    }
+    .wrap1 input{
+        border-radius: 10px;
+        text-align: center;
+        height: 25px;
+        border-style: none;
+        background-color: rgb(217, 248, 238);
+    }
+    .wrap1 button{
+        border-style: none;
+        width: 85px;
+        height: 25px;
+        font-weight: bold;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: rgba(117, 230, 192, 0.918);
+        border-radius: 15px;
+
+    }
+    .wrap1 button:hover{
+        background-color: rgba(48, 94, 78, 0.918);
+        color: white;
+        transition: .5s;
+    }
+    .wrap1 .btn{
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+</style>
+<body>
+    <div class="container">
+        
+        <div class="wrap1">
+        <h3>Fahrenheit to Celsius</h3>
+        <input type="number" id="f"><br><br>
+        <div class="btn">
+        <button onclick="Convert()">Convert</button>
+        <button onclick="r()">Clear</button></div>
+        </div>
+        <h4 >Converted To:<span id="result"></span></h4>
+    </div>
+
+    <script>
+        function Convert(){
+            const F = document.getElementById('f').value
+            const convert = (F-32)*(5/9)
+            document.getElementById('result').innerHTML = ' °C ' + Math.ceil(convert) 
+        }
+        function r(){
+            document.getElementById('f').value = ''
+            document.getElementById('result').innerHTML = ''
+        }
+    </script>
+</body>
+</html>
